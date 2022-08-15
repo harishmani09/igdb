@@ -18,10 +18,8 @@ class GamesController extends Controller
 
 
 
-        $highestRatedGames = Http::withHeaders([
-            'Client-ID' => '75iy3m6y4s2awi931vdaa2b4ws7wp3',
-            'Authorization'=> 'Bearer punjgjxmipyt3t17311lpshtc3zcn2'
-        ])->withBody("fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug;
+        $highestRatedGames = Http::withHeaders(config('services.igdb')
+        )->withBody("fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug;
             where platforms = (48,49,130, 6)
             & (first_release_date >= {$before}
             & first_release_date < {$after}
