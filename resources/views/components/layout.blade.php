@@ -9,11 +9,12 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-
+        @livewireStyles
     </head>
     <body class="bg-gray-900 text-white">
 
         {{ $slot }}
 
+        @livewireScripts
     </body>
 </html>
